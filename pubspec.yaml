@@ -1,0 +1,31 @@
+name: reverse_singing_challenge
+description: Offline party game — reverse your voice, pass the phone, reveal the chaos.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^6.1.2
+  hive_ce: ^2.9.0
+  hive_ce_flutter: ^2.1.0
+  record: ^5.1.2
+  just_audio: ^0.9.40
+  path_provider: ^2.1.3
+  permission_handler: ^11.3.1
+  go_router: ^14.2.7
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_ce_generator: ^1.8.1
+  build_runner: ^2.4.13
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

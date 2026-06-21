@@ -1,0 +1,7 @@
+-keep class com.hive.** { *; }
+-keep class com.ryanheise.** { *; }
+-dontwarn com.ryanheise.**
+-keep class androidx.media3.** { *; }
+-dontwarn androidx.media3.**
+-keep class io.flutter.** { *; }
+-keep class com.reversesing.** { *; }
