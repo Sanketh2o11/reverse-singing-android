@@ -5,3 +5,4 @@
 -dontwarn androidx.media3.**
 -keep class io.flutter.** { *; }
 -keep class com.reversesing.** { *; }
+-dontwarn com.google.android.play.core.**
