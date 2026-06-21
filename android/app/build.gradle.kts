@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.reversesing.reverse_singing_challenge"
-    compileSdk = 35
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         applicationId = "com.reversesing.reverse_singing_challenge"
         minSdk = 28
-        targetSdk = 35
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
