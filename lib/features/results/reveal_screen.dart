@@ -268,7 +268,7 @@ class _RevealScreenState extends State<RevealScreen> {
                 gradient: ColorPalette.gradientB,
                 onTap: () async {
                   await _finalPlayback.stop();
-                  _playingOriginal
+                  _originalPlayback.isPlaying
                       ? await _originalPlayback.pause()
                       : await _originalPlayback.play();
                   HapticUtils.light();
@@ -292,7 +292,7 @@ class _RevealScreenState extends State<RevealScreen> {
                 gradient: ColorPalette.gradientA,
                 onTap: () async {
                   await _originalPlayback.stop();
-                  _playingFinal
+                  _finalPlayback.isPlaying
                       ? await _finalPlayback.pause()
                       : await _finalPlayback.play();
                   HapticUtils.light();

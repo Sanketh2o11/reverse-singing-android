@@ -59,7 +59,7 @@ class _WaveformWidgetState extends State<WaveformWidget>
 
     final rng = Random(42);
     for (int i = 0; i < _barCount; i++) {
-      _idleHeights.add(0.03 + rng.nextDouble() * 0.07);
+      _idleHeights.add(0.15 + rng.nextDouble() * 0.25);
     }
 
     _idleController = AnimationController(
@@ -153,7 +153,7 @@ class _WaveformPainter extends CustomPainter {
     final barWidth = (size.width - gap * (barCount - 1)) / barCount;
 
     final isIdle = mode == WaveformMode.recording &&
-        bars.every((b) => b < 0.15);
+        bars.every((b) => b < 0.06);
 
     final activeGradient = const LinearGradient(
       colors: [ColorPalette.purple, ColorPalette.pink, ColorPalette.cyan],
@@ -174,8 +174,8 @@ class _WaveformPainter extends CustomPainter {
       double height;
       if (isIdle) {
         final base = idleHeights[i];
-        final breathFactor = 1.0 + 0.15 * idleBreath;
-        height = (base * size.height * breathFactor).clamp(3.0, size.height);
+        final breathFactor = 1.0 + 0.30 * idleBreath;
+        height = (base * size.height * breathFactor).clamp(4.0, size.height);
       } else {
         height = (bars[i] * size.height).clamp(3.0, size.height);
       }

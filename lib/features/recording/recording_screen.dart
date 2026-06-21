@@ -268,7 +268,7 @@ class _RecordingScreenState extends State<RecordingScreen>
               height: 80,
             )
           : WaveformWidget.staticDisplay(
-              peaks: List.generate(32, (i) => 0.03 + (i % 4) * 0.015),
+              peaks: List.generate(32, (i) => 0.15 + (i % 7) * 0.04),
               height: 80,
             ),
     );

@@ -21,9 +21,18 @@ class PlaybackService {
     await _player!.setFilePath(filePath);
   }
 
-  Future<void> play() async => _player?.play();
+  Future<void> play() async {
+    if (_player?.processingState == ProcessingState.completed) {
+      await _player?.seek(Duration.zero);
+    }
+    await _player?.play();
+  }
+
   Future<void> pause() async => _player?.pause();
-  Future<void> stop() async => _player?.stop();
+  Future<void> stop() async {
+    await _player?.stop();
+    await _player?.seek(Duration.zero);
+  }
   Future<void> seek(Duration position) async => _player?.seek(position);
 
   Future<Duration?> get duration async => _player?.duration;

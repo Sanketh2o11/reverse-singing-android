@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math' show sqrt;
 import 'package:record/record.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/utils/audio_utils.dart';
@@ -29,7 +30,9 @@ class RecorderService {
     _ampSub = _recorder
         .onAmplitudeChanged(const Duration(milliseconds: 80))
         .listen((amp) {
-      final normalized = ((amp.current + 60) / 60).clamp(0.0, 1.0);
+      // sqrt curve: boosts quiet signals so bars visibly react to speech
+      final linear = ((amp.current + 60) / 60).clamp(0.0, 1.0);
+      final normalized = sqrt(linear);
       if (!_ampController.isClosed) _ampController.add(normalized);
     });
   }
